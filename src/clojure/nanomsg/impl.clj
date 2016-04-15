@@ -14,7 +14,6 @@
            nanomsg.Device
            nanomsg.Poller
            nanomsg.async.AsyncSocket
-           nanomsg.async.IAsyncCallback
            java.nio.ByteBuffer
            clojure.lang.Keyword
            clojure.lang.IFn))
