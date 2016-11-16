@@ -3,7 +3,7 @@
   :url "https://github.com/niwibe/jnanomsg"
   :license {:name "Apache 2.0"
             :url "http://www.apache.org/licenses/LICENSE-2.0.txt"}
-  :dependencies [[org.clojure/clojure "1.7.0" :scope "provided"]
+  :dependencies [[org.clojure/clojure "1.8.0" :scope "provided"]
                  [funcool/octet "0.2.0" :scope "provided"]
                  [net.java.dev.jna/jna "4.2.1"]]
 
