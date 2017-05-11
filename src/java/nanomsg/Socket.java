@@ -121,23 +121,6 @@ public interface Socket {
   byte[] recvBytes() throws IOException;
 
   /**
-   * Receive a message with option for set blocking flag.
-   *
-   * @param blocking set blocking or non blocking flag.
-   * @return Message instance.
-   */
-  ByteBuffer recv(final EnumSet<SocketFlag> flagSet) throws IOException;
-
-  /**
-   * Receive a message.
-   *
-   * This operation is blocking by default.
-   *
-   * @return receved data as ByteBuffer
-   */
-  ByteBuffer recv() throws IOException;
-
-  /**
    * Subscribe to a particular topic.
    *
    * WARNING This method is only supported on SubSocket.

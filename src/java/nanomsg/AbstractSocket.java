@@ -130,35 +130,13 @@ public abstract class AbstractSocket implements Socket {
     final Pointer result = ptrBuff.getValue();
     final byte[] bytesResult = result.getByteArray(0, rc);
 
+    NativeLibrary.nn_freemsg(result);
+
     return bytesResult;
   }
 
   public byte[] recvBytes() throws IOException {
     return this.recvBytes(EnumSet.noneOf(SocketFlag.class));
-  }
-
-  public ByteBuffer recv(final EnumSet<SocketFlag> flagSet) throws IOException {
-    final PointerByReference ptrBuff = new PointerByReference();
-
-    int flags = 0;
-    if (flagSet.contains(SocketFlag.NN_DONTWAIT)){
-      flags |= SocketFlag.NN_DONTWAIT.value();
-    }
-
-    final int rc = nn_recv(this.fd, ptrBuff, NN_MSG, flags);
-
-    if (rc < 0) {
-      Nanomsg.handleError(rc);
-    }
-
-    final Pointer result = ptrBuff.getValue();
-    final ByteBuffer buffer = result.getByteBuffer(0, rc);
-
-    return buffer;
-  }
-
-  public ByteBuffer recv() throws IOException {
-    return this.recv(EnumSet.noneOf(SocketFlag.class));
   }
 
   public synchronized int send(final ByteBuffer data,
