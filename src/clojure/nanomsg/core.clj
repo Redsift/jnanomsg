@@ -15,7 +15,6 @@
   (:require [nanomsg.proto :as p]
             [nanomsg.impl :as impl])
   (:import nanomsg.Socket
-           nanomsg.async.AsyncSocket
            nanomsg.Nanomsg
            nanomsg.Device
            nanomsg.Poller
